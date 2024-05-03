@@ -1,0 +1,11 @@
+<div class="container">
+    <h1 class="text-4xl font-extrabold text-gray-800">Match History</h1>
+    <div class="card-container flex-wrap flex-col md:flex-row flex">
+        @for (match of allMatch; track $index) 
+    {
+        <div class="md:w-[33%] p-2 w-full">
+            <app-match-card [match]="match"></app-match-card>
+        </div>
+    }
+    </div>
+</div>

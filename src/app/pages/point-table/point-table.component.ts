@@ -25,6 +25,7 @@ export class PointTableComponent implements OnInit{
         console.log(this.pointTable);        
         this.pointTableRow=[...this.pointTable[0]]
         this.pointTable=this.pointTable.filter((item:any,index:any)=>index>0)
+        console.log(this.pointTableRow); 
       },
     });
   }

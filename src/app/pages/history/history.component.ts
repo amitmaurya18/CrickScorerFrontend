@@ -11,18 +11,23 @@ import { MatchCardComponent } from '../../components/match-card/match-card.compo
   styleUrl: './history.component.css'
 })
 export class HistoryComponent implements OnInit{
-  allMatch: any;
+  loading=false
+  allMatches: any;
   constructor(private _api:ApiCallService){
 
   }
   ngOnInit(): void {
-    this._api.getAllMatches().subscribe({
+    this.loadMatchHistory()
+  }
+
+  loadMatchHistory(){
+
+    this._api.getAllMatches()
+    .subscribe({
       next:data=>{
-        this.allMatch=data
-      },
-      error:error=>{
-        console.log(error)
+        this.allMatches=data;
       }
     })
+
   }
 }

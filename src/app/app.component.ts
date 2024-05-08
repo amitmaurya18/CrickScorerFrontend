@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
+import { ApiCallService } from './services/api-call.service';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,12 @@ import { RouterModule, RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+  constructor(private _api: ApiCallService){
+    
+  }
+  ngOnInit(): void {
+    
+  }
   title = 'crickscorerFrontend';
 }

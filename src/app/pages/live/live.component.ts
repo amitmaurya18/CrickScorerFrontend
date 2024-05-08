@@ -11,23 +11,35 @@ import { MatchCardComponent } from '../../components/match-card/match-card.compo
   styleUrl: './live.component.css'
 })
 export class LiveComponent implements OnInit{
-  liveMatches:any
+
   constructor(private _api:ApiCallService){
 
   }
+
+  liveData: any;
+  loading = false
+
   ngOnInit(): void {
-    this.loadLiveMatches();
+    this.loadScore();
   }
 
-  private loadLiveMatches() {
-    this._api.getAllMatches().subscribe({
+  loadScore() {
+    this.loading = true
+    this._api.getLiveMatchScores().subscribe({
       next: data => {
-        console.log(data);
-        this.liveMatches=data
+        this.liveData = data;
+        console.log(this.liveData);    
+        this.loading = false
       },
-      error: error => {
-        console.log(error);
+      error: (error) => {
+        console.log(error)
+        this.loading = false
       }
-    });
+    })
   }
+
+  refreshScore() { 
+    this.loadScore()
+  }
+  
 }

@@ -11,10 +11,10 @@ export class ApiCallService {
   getAllMatches(){
     return this._httpClient.get(`${environment.apiUrl}/match`)
   }
-  getLiveMatches(){
+  getLiveMatchScores(){
     return this._httpClient.get(`${environment.apiUrl}/match/live`)
   }
-  getPointTable(){
+  getCWC2023PointTable(){
     return this._httpClient.get(`${environment.apiUrl}/match/point-table`)
   }
 }

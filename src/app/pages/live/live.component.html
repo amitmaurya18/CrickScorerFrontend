@@ -1,11 +1,18 @@
-<div class="container">
-    <h1 class="text-4xl font-extrabold text-gray-800">Live Cricket Score</h1>
-    <div class="card-container flex-wrap flex-col md:flex-row flex">
-        @for (match of liveMatches; track $index) 
-    {
-        <div class="md:w-[33%] p-2 w-full">
-            <app-match-card [match]="match"></app-match-card>
-        </div>
+@if (loading) {
+    <h1 class=" p-4  text-2xl text-center">Loading...</h1>
     }
+@if (!loading) {
+    <div class="flex py-3 px-10 justify-between">
+        <h1 class="text-4xl font-extrabold text-gray-800">Live Cricket Score</h1>
+        <button (click)="refreshScore()" class="px-3 py-2 bg-blue-500 hover:bg-blue-700 rounded-full text-white">Refresh</button>
     </div>
-</div>
+        <div class="card-container flex-wrap flex-col md:flex-row flex items-stretch">
+            @for (match of liveData; track $index) 
+        {
+            <div class="md:w-[33%] p-3 w-full">
+                <app-match-card [data]="match"></app-match-card>
+            </div>
+        }
+        </div>
+}
+

@@ -15,6 +15,12 @@ export class ApiCallService {
     return this._httpClient.get(`${environment.apiUrl}/match/live`)
   }
   getCWC2023PointTable(){
-    return this._httpClient.get(`${environment.apiUrl}/match/point-table`)
+    return this._httpClient.get(`${environment.apiUrl}/match/point-table-cwc`)
+  }
+  getIPL2024PointTable(){
+    return this._httpClient.get(`${environment.apiUrl}/match/point-table-ipl`)
+  }
+  getWTC2025PointTable(){
+    return this._httpClient.get(`${environment.apiUrl}/match/point-table-wtc`)
   }
 }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PointTableComponent } from './point-table.component';
+import { PointTableWtcComponent } from './point-table-wtc.component';
 
-describe('PointTableComponent', () => {
-  let component: PointTableComponent;
-  let fixture: ComponentFixture<PointTableComponent>;
+describe('PointTableWtcComponent', () => {
+  let component: PointTableWtcComponent;
+  let fixture: ComponentFixture<PointTableWtcComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PointTableComponent]
+      imports: [PointTableWtcComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(PointTableComponent);
+    fixture = TestBed.createComponent(PointTableWtcComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

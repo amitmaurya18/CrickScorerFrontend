@@ -11,11 +11,18 @@ import { ApiCallService } from './services/api-call.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit{
+  isOpen: boolean = false;
   constructor(private _api: ApiCallService){
     
   }
   ngOnInit(): void {
     
+  }
+  toggleDropdown() {
+    this.isOpen = !this.isOpen;
+  }
+  closeDropdown() {
+    this.isOpen = false;
   }
   title = 'crickscorerFrontend';
 }
